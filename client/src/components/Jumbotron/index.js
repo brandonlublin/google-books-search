@@ -1,6 +1,6 @@
 import React from "react";
 
-function Jumbotron({ children }) {
+function Jumbotron() {
   return (
     <div>
       <div className="jumbotron text-center">

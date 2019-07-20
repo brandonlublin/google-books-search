@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SearchBar from "../components/Search";
-// import SearchResults from "../components/searchResults"
+import SearchResults from "../components/SearchResults"
 import API from "../utils/API"
 
 class Search extends Component {
@@ -9,16 +9,14 @@ class Search extends Component {
     search: ""
   };
 
-  // componentDidMount() {
-  //   this.loadBooks();
-  // }
+  componentDidMount() {
+    this.getBooks();
+  }
 
-  loadBooks = () => {
-    API.getBooks("Cristo")
+  getBooks = () => {
+    API.getBooks("Bug")
     .then(res => this.setState({ books: res.data.items }))
     .catch(err => console.log(err));
-    console.log(this.books);
-    
   };
 
   handleInputChange = event => {
@@ -44,7 +42,7 @@ class Search extends Component {
 
         <SearchBar handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} />
 
-        {/* <SearchResults books={this.state.books}/> */}
+        <SearchResults books={this.state.books}/>
 
       </div>
     );

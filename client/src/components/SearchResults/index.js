@@ -1,5 +1,5 @@
 import React from "react";
-import BookCard from "../components/bookCard"
+import BookCard from "../BookCard";
 
 function SearchResults(props) {
     return (
@@ -12,7 +12,7 @@ function SearchResults(props) {
                 </div>
                 <div>
                     {props.books.map(book => (
-                        <BookCard key={book.id} title={book.volumeInfo.title} authors={book.volumeInfo.authors} link={book.volumeInfo.previewLink} img={book.volumeInfo.imageLinks.thumbnail} description={book.volumeInfo.description} />
+                        <BookCard key={book.id} title={book.volumeInfo.title} author={book.volumeInfo.author} link={book.volumeInfo.previewLink} img={book.volumeInfo.imageLinks.thumbnail} description={book.volumeInfo.description} />
                     ))}
                 </div>
             </div>
