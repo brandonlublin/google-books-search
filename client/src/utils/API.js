@@ -9,5 +9,6 @@ export default {
   getBooks: function(query) {
     return axios.get(urlKey + `&q=${query}`);
   }
+  
 
 };

@@ -31,8 +31,9 @@ class Search extends Component {
 
     if (this.state.search) {
       API.getBooks(this.state.search)
+        .then(res => this.setState({ search: res.params }))
         .then(res => this.setState({ books: res.data.items }))
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
     }
   };
 

@@ -1,5 +1,9 @@
 .card {
-    width: 66vw;
     padding: 20px;
     margin-bottom: 20px;
+}
+#bookImage {
+    width: auto;
+    height: 400px;
+    justify-content: center;
 }
