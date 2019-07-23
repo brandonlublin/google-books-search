@@ -6,7 +6,7 @@ function BookCard(props) {
     return (
         <div>
             <Card>
-                {console.log(props)}
+                {/* {console.log(props)} */}
                 <Card.Img variant="top"  id='bookImage' src={props.img} />
                 <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
@@ -15,7 +15,7 @@ function BookCard(props) {
                     </Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
-                    <ListGroupItem>{props.author[0]}</ListGroupItem>
+                    <ListGroupItem>{props.author}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
                     <Card.Link href={props.link}>View More Info</Card.Link>

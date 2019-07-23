@@ -12,9 +12,13 @@ function SearchResults(props) {
                 </div>
                 <div className="row">
                     <div className="col-md-4">
-                        {props.books.map(book => (
-                            <BookCard key={book.id} title={book.volumeInfo.title} author={book.volumeInfo.authors} link={book.volumeInfo.previewLink} img={book.volumeInfo.imageLinks.thumbnail} description={book.volumeInfo.description} />
-                        ))}
+                        {props.books ? props.books.map(book => (
+                            <BookCard key={book.id} 
+                            title={book.volumeInfo.title} 
+                            author={book.volumeInfo.authors} 
+                            link={book.volumeInfo.previewLink} 
+                            img={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : book.volumeInfos.imageLinks.smallThumbnail} description={book.volumeInfo.description} />
+                        )) : 'No books found'}
                     </div>
                 </div>
             </div>

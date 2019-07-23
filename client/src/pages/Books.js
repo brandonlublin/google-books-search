@@ -14,7 +14,8 @@ class Search extends Component {
   }
 
   getBooks = () => {
-    API.getBooks("Bug")
+    API.getBooks("where the red fern grows")
+    .then(res => console.log(res.data.items))
     .then(res => this.setState({ books: res.data.items }))
     .catch(err => console.log(err));
   };
@@ -31,7 +32,6 @@ class Search extends Component {
 
     if (this.state.search) {
       API.getBooks(this.state.search)
-        .then(res => this.setState({ search: res.params }))
         .then(res => this.setState({ books: res.data.items }))
         .catch(err => console.log(err))
     }
